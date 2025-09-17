@@ -1,5 +1,5 @@
 import 'package:eventure_mobile/config/theme/color%20.dart';
-import 'package:eventure_mobile/screens/organizer/eventpage.dart';
+import 'package:eventure_mobile/screens/organizer/create_event_screen.dart';
 import 'package:flutter/material.dart';
 
 class ManageEventsScreen extends StatefulWidget {
