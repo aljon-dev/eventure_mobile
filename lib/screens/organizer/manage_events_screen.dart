@@ -17,7 +17,7 @@ class _ManageEventsScreenState extends State<ManageEventsScreen> {
     return Scaffold(
       backgroundColor: AppColors.surfaceDark,
       appBar: AppBar(
-        backgroundColor: Color(0xFF1E1E1E),
+        backgroundColor: AppColors.backgroundDark,
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
@@ -67,7 +67,7 @@ class _ManageEventsScreenState extends State<ManageEventsScreen> {
                     decoration: BoxDecoration(
                       border: Border(
                         bottom: BorderSide(
-                          color: isSelected ? Color(0xFF00C853) : Colors.transparent,
+                          color: isSelected ? AppColors.success : Colors.transparent,
                           width: 2,
                         ),
                       ),
@@ -75,7 +75,7 @@ class _ManageEventsScreenState extends State<ManageEventsScreen> {
                     child: Text(
                       tab,
                       style: TextStyle(
-                        color: isSelected ? Color(0xFF00C853) : Colors.grey,
+                        color: isSelected ? AppColors.success : AppColors.textSecondary,
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                       ),

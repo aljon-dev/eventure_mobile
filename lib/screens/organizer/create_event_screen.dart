@@ -89,7 +89,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                   SizedBox(height: 8),
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0xFF3A3A3A),
+                      color: AppColors.backgroundDark,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: TextField(
@@ -98,12 +98,12 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                       decoration: InputDecoration(
                         hintText: 'Enter a catchy event title',
                         hintStyle: TextStyle(
-                          color: Color(0xFF808080),
+                          color: AppColors. textSecondary,
                           fontSize: 14,
                         ),
                         prefixIcon: Icon(
                           Icons.title,
-                          color: Color(0xFF808080),
+                          color: AppColors. textSecondary,
                           size: 20,
                         ),
                         border: InputBorder.none,
@@ -117,7 +117,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                     child: Text(
                       '0/100',
                       style: TextStyle(
-                        color: Color(0xFF808080),
+                        color: AppColors.textSecondary,
                         fontSize: 12,
                       ),
                     ),
@@ -137,7 +137,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                   Container(
                     height: 120,
                     decoration: BoxDecoration(
-                      color: Color(0xFF3A3A3A),
+                      color: AppColors.backgroundDark,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: TextField(
@@ -148,14 +148,14 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                       decoration: InputDecoration(
                         hintText: 'Describe what this event is about...',
                         hintStyle: TextStyle(
-                          color: Color(0xFF808080),
+                          color: AppColors.textSecondary,
                           fontSize: 14,
                         ),
                         prefixIcon: Padding(
                           padding: EdgeInsets.only(top: 12),
                           child: Icon(
                             Icons.description,
-                            color: Color(0xFF808080),
+                            color: AppColors.textSecondary,
                             size: 20,
                           ),
                         ),
@@ -170,7 +170,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                     child: Text(
                       '0/1000',
                       style: TextStyle(
-                        color: Color(0xFF808080),
+                        color: AppColors.textSecondary,
                         fontSize: 12,
                       ),
                     ),
@@ -189,7 +189,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                   SizedBox(height: 8),
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0xFF3A3A3A),
+                      color: AppColors.backgroundDark,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: TextField(
@@ -199,12 +199,12 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                       decoration: InputDecoration(
                         hintText: 'Number of attendees',
                         hintStyle: TextStyle(
-                          color: Color(0xFF808080),
+                          color: AppColors.textSecondary,
                           fontSize: 14,
                         ),
                         prefixIcon: Icon(
                           Icons.people,
-                          color: Color(0xFF808080),
+                          color: AppColors.textSecondary,
                           size: 20,
                         ),
                         border: InputBorder.none,
@@ -219,181 +219,207 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
             SizedBox(height: 16),
             
             // Date & Time Container
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: AppColors.divider,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Header with icon
-                  Row(
-                    children: [
-                      Container(
-                        width: 32,
-                        height: 32,
-                        decoration: BoxDecoration(
-                          color: AppColors.success.withOpacity(0.5),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Icon(
-                          Icons.alarm,
-                          color: AppColors.success,
-                          size: 16,
-                        ),
+           Container(
+  width: double.infinity,
+  padding: EdgeInsets.all(16),
+  decoration: BoxDecoration(
+    color: AppColors.divider,
+    borderRadius: BorderRadius.circular(12),
+  ),
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      // Header with icon
+      Row(
+        children: [
+          Container(
+            width: 32,
+            height: 32,
+            decoration: BoxDecoration(
+              color: AppColors.success.withOpacity(0.5),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Icon(
+              Icons.alarm,
+              color: AppColors.success,
+              size: 16,
+            ),
+          ),
+          SizedBox(width: 12),
+          Text(
+            'Date & Time',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
+      SizedBox(height: 24),
+      
+      // Date Field
+      Container(
+        decoration: BoxDecoration(
+          color: AppColors.surfaceDark,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: InkWell(
+          onTap: () {
+            // Handle date selection
+          },
+          borderRadius: BorderRadius.circular(8),
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      Icons.calendar_today,
+                      color: AppColors.textSecondary,
+                      size: 20,
+                    ),
+                    SizedBox(width: 12),
+                    Text(
+                      'Date',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
                       ),
-                      SizedBox(width: 12),
-                      Text(
-                        'Date & Time',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 24),
-                  
-                  // Date Field
-                  Text(
-                    'Date',
+                    ),
+                  ],
+                ),
+                SizedBox(height: 8),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Select Date',
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
+                      color: AppColors.textSecondary,
+                      fontSize: 12,
                     ),
                   ),
-                  SizedBox(height: 8),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: AppColors.surfaceDark,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: TextField(
-                      style: TextStyle(color: Colors.white),
-                      readOnly: true,
-                      decoration: InputDecoration(
-                        hintText: 'Select date',
-                        hintStyle: TextStyle(
-                          color: Color(0xFF808080),
-                          fontSize: 14,
-                        ),
-                        prefixIcon: Icon(
-                          Icons.calendar_month,
-                          color: Color(0xFF808080),
-                          size: 20,
-                        ),
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.all(16),
-                      ),
-                      onTap: () {
-                        // Handle date selection
-                      },
-                    ),
-                  ),
-                  SizedBox(height: 24),
-                  
-                  // Time Fields Row
-                  Row(
+                ),
+              ],
+            )
+          ),
+        ),
+      ),
+      SizedBox(height: 24),
+      
+      // Time Fields Row
+      Row(
+        children: [
+          // Start Time
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.surfaceDark,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: InkWell(
+                onTap: () {
+                  // Handle start time selection
+                },
+                borderRadius: BorderRadius.circular(8),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
                     children: [
-                      // Start Time
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Start Time',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.access_time_outlined,
+                            color: AppColors.textSecondary,
+                            size: 20,
+                          ),
+                          SizedBox(width: 12),
+                          Text(
+                            'Start Time',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
                             ),
-                            SizedBox(height: 8),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: AppColors.surfaceDark,
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: TextField(
-                                style: TextStyle(color: Colors.white),
-                                readOnly: true,
-                                decoration: InputDecoration(
-                                  hintText: 'Start time',
-                                  hintStyle: TextStyle(
-                                    color: Color(0xFF808080),
-                                    fontSize: 14,
-                                  ),
-                                  prefixIcon: Icon(
-                                    Icons.access_time,
-                                    color: Color(0xFF808080),
-                                    size: 20,
-                                  ),
-                                  border: InputBorder.none,
-                                  contentPadding: EdgeInsets.all(16),
-                                ),
-                                onTap: () {
-                                  // Handle start time selection
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                      SizedBox(width: 16),
-                      // End Time
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'End Time',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(height: 8),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: AppColors.surfaceDark,
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: TextField(
-                                style: TextStyle(color: Colors.white),
-                                readOnly: true,
-                                decoration: InputDecoration(
-                                  hintText: 'End time',
-                                  hintStyle: TextStyle(
-                                    color: Color(0xFF808080),
-                                    fontSize: 14,
-                                  ),
-                                  prefixIcon: Icon(
-                                    Icons.access_time_filled,
-                                    color: Color(0xFF808080),
-                                    size: 20,
-                                  ),
-                                  border: InputBorder.none,
-                                  contentPadding: EdgeInsets.all(16),
-                                ),
-                                onTap: () {
-                                  // Handle end time selection
-                                },
-                              ),
-                            ),
-                          ],
+                      SizedBox(height: 8),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Start time',
+                          style: TextStyle(
+                            color: AppColors.textSecondary,
+                            fontSize: 12,
+                          ),
                         ),
                       ),
                     ],
-                  ),
-                ],
+                  )
+                ),
               ),
             ),
+          ),
+          SizedBox(width: 16),
+          // End Time
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.surfaceDark,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: InkWell(
+                onTap: () {
+                  // Handle end time selection
+                },
+                borderRadius: BorderRadius.circular(8),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.access_time_filled,
+                            color: AppColors.textSecondary,
+                            size: 20,
+                          ),
+                          SizedBox(width: 12),
+                          Text(
+                            'End Time',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 8),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'End time',
+                          style: TextStyle(
+                            color: AppColors.textSecondary,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                    ],
+                        )
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+        ),
             
             SizedBox(height: 16),
             
@@ -477,7 +503,8 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                                 Text(
                                   '3rd Floor',
                                   style: TextStyle(
-                                    color: Color(0xFF808080),
+                                    color:AppColors.textSecondary,
+
                                     fontSize: 12,
                                   ),
                                 ),
@@ -485,7 +512,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                                 Text(
                                   'Capacity: 400',
                                   style: TextStyle(
-                                    color: Color(0xFF808080),
+                                    color: AppColors.textSecondary,
                                     fontSize: 12,
                                   ),
                                 ),

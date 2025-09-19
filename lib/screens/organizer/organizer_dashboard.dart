@@ -15,7 +15,7 @@ class EventureApp extends StatelessWidget {
         brightness: Brightness.dark,
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: AppColors.surfaceDark,
-        cardColor: const Color(0xFF2D2D2D),
+        cardColor: AppColors.surfaceDark,
       ),
       home: const EventureDashboard(),
       debugShowCheckedModeBanner: false,
@@ -70,7 +70,7 @@ class _EventureDashboardState extends State<EventureDashboard> {
       body: const HomeScreen(),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: const Color(0xFF2D2D2D),
+        backgroundColor: AppColors.surfaceDark,
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
         currentIndex: _selectedIndex,
@@ -123,11 +123,7 @@ class HomeScreen extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-              ),
+              gradient: AppColors.primaryGradient,
               borderRadius: BorderRadius.circular(16),
             ),
             child: Row(
